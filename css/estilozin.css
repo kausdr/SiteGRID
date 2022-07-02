@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+:root{
+    --main-radius: 5px;
+    --main-padding: 5px;
+}
+.container{
+    display: grid;
+    max-width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+    justify-content: center;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+    grid-template-areas:
+    "nav nav nav nav"
+    "sidebar main main main"
+    "sidebar content1 content2 content3"
+    "sidebar footer footer footer";
+
+    grid-gap: 0.4rem;
+    font-family: 'Anton', sans-serif;
+    color:rgb(71, 51, 26);
+    text-align: center;
+}
+
+.grade{
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+}
+
+nav{
+    background-color:aqua;
+    grid-area: nav;
+}
+
+main{
+    background-color:aquamarine;
+    grid-area: main;
+}
+
+div#sidebar{
+    background-color:bisque;
+    grid-area: sidebar;
+}
+
+div#content1{
+    background-color:rgb(118, 196, 233);
+    grid-area: content1;
+
+}
+
+div#content2{
+    background-color:rgb(176, 233, 111);
+    grid-area: content2;
+}
+
+div#content3{
+    background-color:rgb(245, 218, 143);
+    grid-area: content3;
+}
+
+footer{
+    background-color:rgb(226, 179, 248);
+    grid-area: footer;
+}
+
+@media only screen and (max-width: 550px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+
+        grid-template-areas:
+        "nav"
+        "sidebar"
+        "main"
+        "content1"
+        "content2"
+        "content3"
+        "footer"
+
+    }
+}
